@@ -112,7 +112,7 @@ function (x, Rowv = NULL, Colv = if (symm) "Rowv" else NULL,
     layout(lmat, widths = lwid, heights = lhei, respect = FALSE)
     if (!missing(RowSideColors)) {
         par(mar = c(margins[1], 0, 0, 0.5))
-        rsc=RowSideColors;
+        rsc=RowSideColors[rowInd,];
         rsc.colors=matrix();
         rsc.names=names(table(rsc));
         rsc.i=1;
@@ -130,7 +130,7 @@ function (x, Rowv = NULL, Colv = if (symm) "Rowv" else NULL,
     }
     if (!missing(ColSideColors)) {
         par(mar = c(0.5, 0, 0, margins[2]))
-        csc=ColSideColors;
+        csc=ColSideColors[colInd,];
         csc.colors=matrix();
         csc.names=names(table(csc));
         csc.i=1;
